@@ -15,37 +15,100 @@ An advanced attendance system leveraging facial recognition technology, combinin
 
 Dr. Priya Ranjan Muduli
 
-## 🛠 Technologies Used
+## ⚙️ Features
+- **User Registration:** Captures and stores student images with unique IDs.
+- **Face Recognition:** Identifies students and marks attendance automatically.
+- **Liveliness Detection:** Prevents proxy attendance by detecting eye blinks.
+- **Image Training:** Processes captured images and saves encodings for recognition.
+- **Attendance Records:** Securely stores and retrieves attendance data.
+- **Text-to-Speech Feedback:** Provides audio responses for better user interaction.
 
-- FaceNet: Deep learning model for face identification
-- OpenCV: Python framework for image processing
-- Face_Recognition library
-- Histogram of Oriented Gradients (HOG) technique
-- Support Vector Machine (SVM) classifier
+## 🏗️ Project Structure
+```
+Smart-Attendance-System/
+│── Attendance_Records/      # Stores attendance records in CSV format
+│── StudentDetails/          # Stores student images and details
+│── BlinkDetect.py           # Liveliness detection using eye blinks
+│── Capture.py               # Captures student images
+│── Trainer.py               # Encodes and trains face images
+│── voicer2.py               # Converts text to speech
+│── main.py                  # Main script with user menu
+│── security.txt             # Stores passwords for record access
+```
 
-## ✨ Key Features
+## 🚀 Installation & Usage
+### 🔧 Requirements
+- Python 3.x
+- OpenCV (`cv2`)
+- `face_recognition` library
+- `numpy`
+- `pyttsx3`
 
-- Face detection and recognition
-- Liveness detection using eye blink analysis
-- Real-time attendance recording
-- Support for multiple camera sources (mobile, laptop, Raspberry Pi)
+### 🔨 Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/Smart-Attendance-System.git
+   cd Smart-Attendance-System
+   ```
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the main script:
+   ```sh
+   python main.py
+   ```
 
-## 🔄 Workflow
+## 🎯 How It Works
+1. **New User Registration:**
+   - Enter ID and Name.
+   - System captures face and stores image.
+   - Details are saved in `StudentDetails.csv`.
+2. **Train Image:**
+   - Encodes and stores face data for recognition.
+3. **Record Attendance:**
+   - Matches face with stored data.
+   - Attendance is marked if match >70%.
+   - Liveliness detection ensures authenticity.
+4. **Check Attendance Status:**
+   - Users can check their attendance via CLI.
+5. **Admin Access to Records:**
+   - Requires a password to view attendance records.
 
-1. Image capture from device camera
-2. Face detection using Dlib's HOG technique
-3. Face identification using FaceNet with triplet loss function
-4. Classification using SVM for rapid database querying
-5. Liveness detection through eye blink analysis
+## 👨‍💻 Technologies Used
+- **Python**
+- **OpenCV** (Face detection)
+- **Face Recognition API**
+- **Raspberry Pi Camera**
+- **NumPy**
+- **CSV for Data Storage**
+- **Text-to-Speech (pyttsx3)**
 
 ## 🎥 Demo
 
 - [Live Demo](https://github.com/mamaleshrh/AttendanceSystem-main/assets/101654909/8cf5d6ee-fa16-4d8a-89e4-c83672b9125b)
 
-
-
-
-
 https://github.com/mamaleshrh/AttendanceSystem-main/assets/101654909/8cf5d6ee-fa16-4d8a-89e4-c83672b9125b
 
+## 📜 Presentation
+
 [explo-G21-presentation.pdf](https://github.com/mamaleshrh/AttendanceSystem-main/files/11463855/explo-G21-presentation.pdf)
+
+## 🤝 Contributing
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
+
+## 📜 License
+This project is licensed under the MIT License.
+
+## 💡 Future Improvements
+- Implement a **web-based UI** for better accessibility.
+- Integrate **cloud storage** for attendance records.
+- Use **deep learning** for improved accuracy.
+
+## 📞 Contact
+For any issues or suggestions, feel free to reach out!
+
